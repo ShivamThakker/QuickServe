@@ -1,0 +1,53 @@
+/* src/components/SignupView.css */
+.signup-view {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    color: #333;
+    width: 400px;
+    margin: 50px auto;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .signup-view h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .form-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-container input {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .form-container .upload-button,
+  .form-container .submit-button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  
+  .form-container .submit-button {
+    background-color: #28a745;
+  }
+  
+  .form-container .upload-button:hover,
+  .form-container .submit-button:hover {
+    opacity: 0.9;
+  }
+  
