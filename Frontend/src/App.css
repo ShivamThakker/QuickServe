@@ -1,0 +1,171 @@
+/* src/App.css */
+
+/* Global styles */
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  color: #343a40;
+  line-height: 1.6;
+}
+
+/* Navbar styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #343a40;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 28px;
+  color: #ffffff;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.logo img{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+ 
+}
+.company-name {
+  color: goldenrod;
+  font-size: 2.5rem;
+  font-weight: bold;
+  
+}
+
+.navbar-links {
+  display: flex;
+}
+
+.navbar-link {
+  margin-left: 25px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar-link:hover {
+  color: #f8c03e;
+}
+
+/* Main content styles */
+.content {
+  padding: 40px 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.service-location, .services-offered, .why-us, .book-service {
+  margin-bottom: 40px;
+}
+
+/* Section heading styles */
+h2 {
+  font-size: 32px;
+  color: #343a40;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #f8c03e;
+  display: inline-block;
+}
+
+/* Input and select styles */
+.service-location select, .phone-input input {
+  padding: 12px 15px;
+  margin-top: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+.service-location select:focus, .phone-input input:focus {
+  border-color: #f8c03e;
+}
+.services-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.services-list p {
+  flex: 1 1 45%; /* Adjust the width of each service item */
+  text-align: left;
+}
+/* Why Us section styles */
+.why-us-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.why-us-items p {
+  flex: 1 1 45%; /* Adjust the width of each why-us item */
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 10px 0;
+  font-size: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  text-align: left;
+}
+
+.phone-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.phone-input label {
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+/* Button styles */
+button {
+  padding: 12px 20px;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #f8c03e;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #e6b437;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navbar-link {
+    margin: 10px 0;
+  }
+
+  .content {
+    padding: 20px;
+  }
+}
