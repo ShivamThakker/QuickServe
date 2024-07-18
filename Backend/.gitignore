@@ -2,4 +2,4 @@
 app.yaml
 .DS_Store
 node_modules/
-./config.js
+.config.js
