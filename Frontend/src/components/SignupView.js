@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import './SignupView.css';
 
 const SignupView = () => {
@@ -7,16 +8,46 @@ const SignupView = () => {
   const [email, setEmail] = useState('');
   const [service, setService] = useState('');
   const [hourlyRate, setHourlyRate] = useState('');
+  const [photo, setPhoto] = useState(null);
+  const [message, setMessage] = useState('');
 
-  const handleSignup = () => {
-    // Handle signup logic here
-    console.log('Signing up with', name, phoneNumber, email, service, hourlyRate);
+  const handleSignup = async () => {
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('phoneNumber', phoneNumber);
+    formData.append('email', email);
+    formData.append('service', service);
+    formData.append('hourlyRate', hourlyRate);
+    formData.append('photo', photo);
+
+    try {
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/signup`, formData);
+      setMessage({ type: 'success', text: 'User registered successfully' });
+      clearForm();
+    } catch (error) {
+      setMessage({ type: 'error', text: 'User with this email id already registered' });
+    }
+  };
+
+  const clearForm = () => {
+    setName('');
+    setPhoneNumber('');
+    setEmail('');
+    setService('');
+    setHourlyRate('');
+    setPhoto(null);
+    document.getElementById('photoInput').value = '';
   };
 
   return (
     <div className="signup-view">
       <h1>User Registration</h1>
       <div className="form-container">
+        {message && (
+          <div className={message.type === 'success' ? 'success-message' : 'error-message'}>
+            {message.text}
+          </div>
+        )}
         <input 
           type="text" 
           placeholder="Name" 
@@ -47,7 +78,12 @@ const SignupView = () => {
           value={hourlyRate} 
           onChange={(e) => setHourlyRate(e.target.value)} 
         />
-        <button className="upload-button">Upload Photo</button>
+        <input 
+          type="file" 
+          id="photoInput"
+          onChange={(e) => setPhoto(e.target.files[0])} 
+          placeholder="Upload photo"
+        />
         <button onClick={handleSignup} className="submit-button">Submit</button>
       </div>
     </div>

@@ -1,0 +1,6 @@
+.env
+app.yaml
+.DS_Store
+node_modules/
+build/
+.config.js

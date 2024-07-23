@@ -2,7 +2,6 @@
 const mongoose = require('mongoose');
 
 const UserSchema = new mongoose.Schema({
-  googleId: { type: String, required: true, unique: true }, // Add googleId field
   name: { type: String, required: true },
   phoneNumber: { type: String, required: true },
   email: { type: String, required: true, unique: true },

@@ -3,8 +3,10 @@ const express = require('express');
 const router = express.Router();
 const userController = require('../controllers/userController');
 const verifyGoogleToken = require('../middleware/verifyGoogleToken');
+const multer = require('multer');
 
-router.post('/signup', userController.createUser);
+
+router.post('/signup', userController.upload, userController.createUser);
 router.get('/users', userController.getUsers);
 router.post('/login', verifyGoogleToken, userController.loginUser);
 
