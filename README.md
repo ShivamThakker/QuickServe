@@ -51,10 +51,12 @@ As this is the first phase of discussion, we are offering services like child ca
 ### Contributions
 ### Team Members
 
-- Adit Shah : 1.Frontend Codebase
+- Adit Shah : 
+-             1.Frontend Codebase
 -             2. Frontend Styling 
 -             3. Frontend Layout and ideation 
 
-- Shivam Thakker : 1. Backend Database 
+- Shivam Thakker :
+-                  1. Backend Database 
 -                  2. Backend codebase 
 -                  3. Api integration 
