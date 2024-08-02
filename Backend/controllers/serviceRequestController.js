@@ -1,45 +1,30 @@
 // controllers/serviceRequestController.js
-
 const ServiceRequest = require('../models/ServiceRequest');
 
 exports.createServiceRequest = async (req, res) => {
-  const { service, city, date, time, userId } = req.body;
+  const { service, location, date, time } = req.body;
+  const userId = req.user._id; // assuming req.user is populated by authentication middleware
 
   try {
-    const newServiceRequest = new ServiceRequest({ service, city, date, time, userId });
+    const newServiceRequest = new ServiceRequest({
+      service,
+      location,
+      date,
+      time,
+      user: userId,
+    });
     await newServiceRequest.save();
     res.status(201).json(newServiceRequest);
-  } catch (error) {
-    res.status(400).json({ message: error.message });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
   }
 };
 
 exports.getServiceRequests = async (req, res) => {
   try {
-    const serviceRequests = await ServiceRequest.find({ userId: req.params.userId });
+    const serviceRequests = await ServiceRequest.find({ user: req.user._id });
     res.status(200).json(serviceRequests);
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-};
-
-exports.updateServiceRequest = async (req, res) => {
-  const { id } = req.params;
-  const { address, pricePerHour } = req.body;
-
-  try {
-    const updatedServiceRequest = await ServiceRequest.findByIdAndUpdate(
-      id,
-      { address, pricePerHour },
-      { new: true }
-    );
-
-    if (!updatedServiceRequest) {
-      return res.status(404).json({ message: 'Service request not found' });
-    }
-
-    res.status(200).json(updatedServiceRequest);
-  } catch (error) {
-    res.status(500).json({ message: error.message });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
   }
 };

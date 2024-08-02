@@ -1,28 +1,38 @@
-// src/components/LoginView.js
 import React from 'react';
 import { GoogleLogin } from '@react-oauth/google';
-import {jwtDecode} from "jwt-decode";
+import { jwtDecode } from 'jwt-decode';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
-const LoginView = ({ setUser }) => {
-  const onSuccess = (res) => {
-    var tokenData = jwtDecode(res.credential);
-    var loginData = {
-      googleId: tokenData.sub,
-      ...tokenData,
-    };
-    setUser(loginData);
-    localStorage.setItem('login', JSON.stringify(loginData));
-    console.log('Login Success : currentUser:', loginData);
+function LoginView({ setUser }) {
+  const navigate = useNavigate();
+  const onSuccess = async (res) => {
+    const token = res.credential; // Get the token from Google response
+    const tokenData = jwtDecode(token);
+
+    console.log('Login Success: Token received:', token); // Debug: Log the token
+    console.log('Login Success: Token data:', tokenData); // Debug: Log the decoded token data
+
+    try {
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/login`, { token });
+      setUser(response.data);
+      localStorage.setItem('login', JSON.stringify(response.data));
+      console.log('Login Success: currentUser:', response.data);
+      navigate('/content');
+      // Redirect to homepage or any other page
+    } catch (error) {
+      console.error('Error during Google login:', error);
+    }
   };
 
   const onFailure = (res) => {
-    console.log('Login Failed: res:', res);
+    console.log('Login failed: res:', res);
   };
 
   return (
     <div>
       <GoogleLogin
-        buttonText="Login"
+        clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
         onSuccess={onSuccess}
         onFailure={onFailure}
         cookiePolicy={'single_host_origin'}
@@ -32,6 +42,6 @@ const LoginView = ({ setUser }) => {
       />
     </div>
   );
-};
+}
 
 export default LoginView;

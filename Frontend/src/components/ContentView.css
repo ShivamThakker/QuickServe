@@ -1,4 +1,4 @@
-/* src/components/ContentView.css */
+/* src/components/ContentView.css
 .content-view {
     background-color: #fff;
     border-radius: 10px;
@@ -76,4 +76,168 @@
 
 .next-button:hover {
     background-color: #0056b3;
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
 }
+
+.content-view {
+  background-color: #f9f9f9;
+  border-radius: 15px;
+  padding: 40px 20px;
+  color: #333;
+  width: 100%;
+  max-width: 600px;
+  margin: 50px auto;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.content-view:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.content-view .title {
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #007BFF;
+  animation: slideInDown 1s ease-in-out;
+}
+
+.service-selection {
+  margin-bottom: 20px;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.service-options {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.service-options label {
+  display: block;
+  margin: 10px 0;
+  font-size: 18px;
+  transition: color 0.3s ease-in-out;
+}
+
+.service-options label:hover {
+  color: #007BFF;
+}
+
+.location-selection {
+  margin-bottom: 20px;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.location-selection h2 {
+  color: #007BFF;
+  margin-bottom: 10px;
+}
+
+.location-selection select {
+  width: 100%;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.location-selection select:focus {
+  border-color: #007BFF;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.datetime-selection {
+  margin-top: 20px;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.datetime-selection h2 {
+  margin-bottom: 10px;
+  color: #007BFF;
+}
+
+.datetime-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Adds spacing between date and time inputs */
+}
+
+.datetime-inputs input[type="date"],
+.datetime-inputs input[type="time"] {
+  width: 100%;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.datetime-inputs input[type="date"]:focus,
+.datetime-inputs input[type="time"]:focus {
+  border-color: #007BFF;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.next-button {
+  margin-top: 20px;
+  padding: 15px 30px;
+  font-size: 18px;
+  color: #fff;
+  background-color: #007BFF;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.next-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+ 

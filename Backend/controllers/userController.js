@@ -1,6 +1,8 @@
 const User = require('../models/User');
+const ServiceSeeker = require('../models/ServiceSeeker');
 const multer = require('multer');
 const path = require('path');
+const { OAuth2Client } = require('google-auth-library');
 
 // Set storage engine
 const storage = multer.diskStorage({
@@ -72,29 +74,55 @@ exports.getUsers = async (req, res) => {
   }
 };
 
-exports.loginUser = async (req, res) => {
-  const { googleId, name, email, picture } = req.user;
-  console.log("Login request received:", req.user); // Log the entire user object
+// const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 
-  if (!googleId) {
-    return res.status(400).json({ error: "googleId is required" });
-  }
+
+// exports.loginUser = async (req, res) => {
+//   const { googleId, name, email, picture } = req.body;
+
+//   try {
+//     let user = await ServiceSeeker.findOne({ googleId });
+
+//     if (!user) {
+//       user = new ServiceSeeker({
+//         googleId,
+//         name,
+//         email,
+//         picture,
+//       });
+//       await user.save();
+//     }
+
+//     res.status(200).json(user);
+//   } catch (error) {
+//     res.status(500).json({ message: 'Server error' });
+//   }
+// };
+
+exports.loginUser = async (req, res) => {
+  console.log("Login request received:", req.body); // Debug: Log the login request
+
+  const { googleId, name, email, picture } = req.body;
 
   try {
-    let user = await User.findOne({ googleId });
+    let user = await ServiceSeeker.findOne({ googleId });
+    console.log("User found:", user); // Debug: Log if the user is found
 
     if (!user) {
-      user = new User({
+      console.log("User not found, creating new user"); // Debug: Log if the user is not found
+      user = new ServiceSeeker({
         googleId,
         name,
         email,
         picture,
       });
       await user.save();
+      console.log("New user created:", user); // Debug: Log the new user created
     }
 
     res.status(200).json(user);
   } catch (error) {
+    console.error('Server error:', error); // Debug: Log any server error
     res.status(500).json({ message: 'Server error' });
   }
 };
