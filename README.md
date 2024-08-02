@@ -60,3 +60,13 @@ As this is the first phase of discussion, we are offering services like child ca
 -                  1. Backend Database 
 -                  2. Backend codebase 
 -                  3. Api integration 
+
+### Challenges
+
+- Deployment issues with google cloud in frontend , images are not visible 
+- Backend deployment 
+
+### Future Work 
+
+- Adding functionalities for react components 
+- Adding details view at the end of checkout.
