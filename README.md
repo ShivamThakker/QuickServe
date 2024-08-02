@@ -43,6 +43,5 @@ Quickserve is a web application that provides a platform for users to request an
 <img width="1225" alt="Screenshot 2024-08-02 at 5 44 23 PM" src="https://media.github.khoury.northeastern.edu/user/17308/files/7127b8c1-e7c5-4fa6-9445-6dbce26c8662">
 <img width="1212" alt="Screenshot 2024-08-02 at 5 44 33 PM" src="https://media.github.khoury.northeastern.edu/user/17308/files/b22fe654-1fea-4df3-86ca-36666368bf03">
 
+### Contributions
 
-
-<img width="1225" alt="Screenshot 2024-08-02 at 5 44 07 PM" src="https://media.github.khoury.northeastern.edu/user/17308/files/9f000e04-796c-4fbf-a722-e94262be5f69">
