@@ -49,4 +49,12 @@ As this is the first phase of discussion, we are offering services like child ca
 <img width="1212" alt="Screenshot 2024-08-02 at 5 44 33 PM" src="https://media.github.khoury.northeastern.edu/user/17308/files/b22fe654-1fea-4df3-86ca-36666368bf03">
 
 ### Contributions
+### Team Members
 
+- Adit Shah : 1.Frontend Codebase
+-             2. Frontend Styling 
+-             3. Frontend Layout and ideation 
+
+- Shivam Thakker : 1. Backend Database 
+-                  2. Backend codebase 
+-                  3. Api integration 
