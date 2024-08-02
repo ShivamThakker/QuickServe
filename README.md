@@ -3,6 +3,11 @@
 
 Quickserve is a web application that provides a platform for users to request and book instant, affordable services. The application allows users to sign up, log in, and access various services such as barber, snow removal, plumbing, mechanic, and carpentry.
 
+Quickserve is the idea of creating a software which provides a platform to local people , or people who are good at some of there skills but lack the customer outreach to provide them the platform for offering there skills , also we are planning to have customers pay less and pay directly to the workers and not pay more bucks to the organizations who are sending the service workers.
+It helps the locals skilled workers get hands on there skills and earn from a trusted customer , we also want to include the authentication feature (in future) for the workers as well as customers so that people can trust our platform. 
+For example , if somebody wants to work as a gardener and I as a customer is looking for a gardener for my garden , then I will contact the institutes and they will quote me like 500 $ for the service , but through our software I will go and signup and find the guy who wants to offer the service at a low cost and also without any third party involvement , I will go and select date and time and enter my house details and then I am good to go, as the worker .
+As this is the first phase of discussion , we are offering services like child care , barber , shovel for winters , gardener , plumber , carpenter and many services in the development for our software.
+
 ## Features
 
 - User Registration and Login
