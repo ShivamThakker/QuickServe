@@ -1,0 +1,12 @@
+.map-container {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Send the map to the background */
+}
+
+.leaflet-container {
+  background: none;
+}
