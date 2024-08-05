@@ -45,22 +45,11 @@ class ServiceDAO {
       console.error('Error creating user:', error);
       throw error;
     }
-    // const savedSeeker = await ServiceRequest.save();
-    //   return savedSeeker;
-    // } catch (error) {
-    //   console.error('Error creating user:', error);
-    //   throw error;
-    // } 
   }
 
-  static async createServiceRequest(data) {
-    try {
-      const result = await ServiceRequest.insertOne(data);
-      return result.ops[0]; // return the created document
-    } catch (error) {
-      throw new Error(error.message);
-    }
-  }
+
+//  Methods above this are currently in use
+
 
   static async getServiceRequestsByUserId(userId) {
     try {
@@ -70,30 +59,5 @@ class ServiceDAO {
       throw new Error(error.message);
     }
   }
-
-  static async findOrCreateServiceSeeker({ googleId, name, email, picture }) {
-    try {
-      // Check if the service seeker already exists
-      let serviceSeeker = await ServiceSeeker.findOne({ googleId });
-
-      // If the service seeker doesn't exist, create a new one
-      if (!serviceSeeker) {
-        serviceSeeker = new ServiceSeeker({
-          googleId,
-          name,
-          email,
-          picture,
-        });
-
-        await serviceSeeker.save();
-      }
-
-      return serviceSeeker;
-    } catch (error) {
-      console.error('Error in findOrCreateServiceSeeker:', error);
-      throw error; // Propagate the error for higher-level error handling
-    }
-  }
 }
-
 module.exports = ServiceDAO;

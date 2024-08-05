@@ -60,12 +60,20 @@ exports.createUser = async (req, res) => {
   }
 };
 
-exports.getUsers = async (req, res) => {
+exports.getUserDetails = async (req, res) => {
+  const { googleId } = req.params; // Assuming googleId is passed as a route parameter
+
   try {
-    const users = await UserDAO.getUsers();
-    res.status(200).json(users);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
+    const user = await ServiceDAO.findServiceSeekerByGoogleId(googleId);
+
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    res.status(200).json(user);
+  } catch (error) {
+    console.error('Error retrieving user details:', error);
+    res.status(500).json({ message: 'Server error' });
   }
 };
 
@@ -81,6 +89,8 @@ exports.loginUser = async (req, res) => {
       user = await ServiceDAO.createServiceSeeker({ googleId, name, email, picture });
     }
 
+    // user = response.data;
+    // localStorage.setItem('user', JSON.stringify(user));
     res.status(200).json(user);
   } catch (error) {
     console.error('Error during login:', error);
