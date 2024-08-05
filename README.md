@@ -55,6 +55,7 @@ As this is the first phase of discussion, we are offering services like child ca
 -             1.Frontend Codebase
 -             2. Frontend Styling 
 -             3. Frontend Layout and ideation 
+-             4. React map component added in the background with markation of maximum sale in the cities
 
 - Shivam Thakker :
 -                  1. Backend Database 
