@@ -4,17 +4,21 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 import SignupView from './components/SignupView';
 import LoginView from './components/LoginView';
 import ContentView from './components/ContentView';
-import Navbar from './components/Navbar';  // Import Navbar component
+import DetailsView from './components/DetailsView'; // Ensure the import is correct
+import Navbar from './components/Navbar';
+import MapComponent from './components/MapComponent';
 import './App.css';
 
 const cities = {
   Maine: [
-    "Portland", "Lewiston", "Bangor", "South Portland", "Auburn",
-    "Biddeford", "Sanford", "Brunswick", "Saco", "Westbrook"
+    { name: "Portland", lat: 43.6615, lng: -70.2553 },
+    { name: "Lewiston", lat: 44.1004, lng: -70.2148 },
+    // Add more cities
   ],
   Massachusetts: [
-    "Boston", "Worcester", "Springfield", "Lowell", "Cambridge",
-    "New Bedford", "Brockton", "Quincy", "Lynn", "Fall River"
+    { name: "Boston", lat: 42.3601, lng: -71.0589 },
+    { name: "Worcester", lat: 42.2626, lng: -71.8023 },
+    // Add more cities
   ]
 };
 
@@ -34,12 +38,14 @@ const App = () => {
     <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}>
       <Router>
         <div className="App">
-          <Navbar user={user} handleLogout={handleLogout} />  {/* Use Navbar component */}
+          <Navbar user={user} handleLogout={handleLogout} />
+          <MapComponent cities={cities} />
           <div className="content">
             <Routes>
               <Route path="/register" element={<SignupView />} />
               <Route path="/login" element={<LoginView setUser={handleLoginSuccess} />} />
               <Route path="/content" element={<ContentView cities={cities} />} />
+              <Route path="/details" element={<DetailsView />} />
               <Route path="/" element={
                 user ? (
                   <Navigate to="/content" />
@@ -82,7 +88,7 @@ const App = () => {
                           <p>On Call Instant Service</p>
                         </div>
                         <div className="why-us-item">
-                          <img src="/images/affordable.png" alt="Affordable" />
+                          <img src="/images/Affordable.png" alt="Affordable" />
                           <p>Affordable</p>
                         </div>
                         <div className="why-us-item">
@@ -111,3 +117,4 @@ const App = () => {
 };
 
 export default App;
+
