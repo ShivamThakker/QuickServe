@@ -7,4 +7,6 @@ const ServiceSeekerSchema = new mongoose.Schema({
   picture: { type: String },
 });
 
-module.exports = mongoose.model('ServiceSeeker', ServiceSeekerSchema);
+const ServiceSeeker = mongoose.model('ServiceSeeker', ServiceSeekerSchema);
+
+module.exports = ServiceSeeker;

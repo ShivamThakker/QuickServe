@@ -70,7 +70,6 @@ const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 
 const verifyGoogleToken = async (req, res, next) => {
   const token = req.body.token;
-  console.log("Token received:", token); // Debug: Log the token received
 
   if (!token) {
     console.log("No token provided"); // Debug: Log if no token is provided
@@ -83,7 +82,6 @@ const verifyGoogleToken = async (req, res, next) => {
       audience: process.env.GOOGLE_CLIENT_ID,
     });
     const payload = ticket.getPayload();
-    console.log("Token payload:", payload); // Debug: Log the payload from the token
 
     req.body.googleId = payload.sub;
     req.body.name = payload.name;
