@@ -4,8 +4,9 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 import SignupView from './components/SignupView';
 import LoginView from './components/LoginView';
 import ContentView from './components/ContentView';
-import Navbar from './components/Navbar'; // Import Navbar component
+import Navbar from './components/Navbar';
 import DetailsView from './components/DetailsView';
+import CheckoutPage from './components/CheckoutPage';
 import './App.css';
 
 const cities = {
@@ -21,7 +22,6 @@ const cities = {
 
 const App = () => {
   const [user, setUser] = useState(() => {
-    // Initialize user from local storage if available
     const storedUser = localStorage.getItem('user');
     return storedUser ? JSON.parse(storedUser) : null;
   });
@@ -40,13 +40,14 @@ const App = () => {
     <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}>
       <Router>
         <div className="App">
-          <Navbar user={user} handleLogout={handleLogout} /> {/* Use Navbar component */}
+          <Navbar user={user} handleLogout={handleLogout} />
           <div className="content">
             <Routes>
               <Route path="/register" element={<SignupView />} />
               <Route path="/login" element={<LoginView setUser={handleLoginSuccess} />} />
               <Route path="/content" element={<ContentView cities={cities} />} />
               <Route path="/details" element={<DetailsView />} />
+              <Route path="/checkout" element={<CheckoutPage />} />
               <Route path="/" element={
                 user ? (
                   <Navigate to="/content" />
