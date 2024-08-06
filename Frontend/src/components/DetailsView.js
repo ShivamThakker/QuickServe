@@ -1,10 +1,11 @@
-// src/components/DetailsView.js
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './DetailsView.css';
 
 const DetailsView = () => {
   const [address, setAddress] = useState('');
   const [pricePerHour, setPricePerHour] = useState('');
+  const navigate = useNavigate();
 
   const handleAddressChange = (event) => {
     setAddress(event.target.value);
@@ -12,6 +13,10 @@ const DetailsView = () => {
 
   const handlePriceChange = (event) => {
     setPricePerHour(event.target.value);
+  };
+
+  const handleNextClick = () => {
+    navigate('/checkout');
   };
 
   return (
@@ -59,6 +64,7 @@ const DetailsView = () => {
           </tr>
         </tbody>
       </table>
+      <button onClick={handleNextClick} className="next-button">Next</button>
     </div>
   );
 };
