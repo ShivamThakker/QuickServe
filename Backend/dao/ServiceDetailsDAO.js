@@ -4,8 +4,8 @@ let ServiceDetails;
 class ServiceDetailsDAO {
   static async injectDB(conn) {
     if (ServiceDetails) {
-      console.log("ServiceDetails Collection present");
-      return;
+      console.log("ServiceDetails Collection present")
+      return; // Collection already initialized
     }
     try {
       // Connect to the ServiceDetails collection
@@ -15,6 +15,7 @@ class ServiceDetailsDAO {
       console.error(`Unable to connect to ServiceDetails collection: ${e}`);
     }
   }
+
 
   static async createServiceRequest({ service, city, date, time, userId }) {
     try {
@@ -27,7 +28,7 @@ class ServiceDetailsDAO {
         userId,
       };
       const result = await ServiceDetails.insertOne(serviceRequest);
-      return result.ops[0]; // return the created document
+      return { ...serviceRequest, _id: result.insertedId }; // return the created document
     } catch (error) {
       console.error('Error creating service request:', error);
       throw new Error(error.message);

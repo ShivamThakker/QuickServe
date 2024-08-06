@@ -3,6 +3,7 @@ const dotenv = require('dotenv')
 const app = require('./server.js')
 const UserDAO = require('./dao/UserDAO.js');
 const ServiceDAO = require('./dao/ServiceDAO.js');
+const ServiceDetailsDAO = require('./dao/ServiceDetailsDAO.js')
 
 
 async function main(){
@@ -20,6 +21,8 @@ async function main(){
         await UserDAO.injectDB(client);
     
         await ServiceDAO.injectDB(client);
+
+        await ServiceDetailsDAO.injectDB(client);
     
 
         app.listen(port, ()=>{

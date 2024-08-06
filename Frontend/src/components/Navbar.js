@@ -1,8 +1,24 @@
 // src/components/Navbar.js
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import './Navbar.css'; // Add this if you have custom styling
 
 const Navbar = ({ user, handleLogout }) => {
+  const navigate = useNavigate();
+
+  const handleLogoutAndRedirect = () => {
+    handleLogout();
+    navigate('/'); // Redirect to the homepage after logging out
+  };
+
+  const handleRequestServiceClick = () => {
+    if (!user) {
+      navigate('/login'); // Redirect to login if user is not logged in
+    } else {
+      navigate('/content'); // Navigate to request service page if logged in
+    }
+  };
+
   return (
     <nav className="navbar">
       <div className="logo">
@@ -12,10 +28,11 @@ const Navbar = ({ user, handleLogout }) => {
         </Link>
       </div>
       <div className="navbar-links">
+        <button onClick={handleRequestServiceClick} className="navbar-link">Request a Service</button>
         {user ? (
           <>
             <span className="navbar-link">Welcome, {user.name}</span>
-            <button onClick={handleLogout} className="navbar-link">Logout</button>
+            <button onClick={handleLogoutAndRedirect} className="navbar-link logout-button">Logout</button>
           </>
         ) : (
           <>
@@ -23,7 +40,6 @@ const Navbar = ({ user, handleLogout }) => {
             <Link to="/login" className="navbar-link">Login / Sign Up</Link>
           </>
         )}
-        <Link to="/content" className="navbar-link">Request a Service</Link>
       </div>
     </nav>
   );

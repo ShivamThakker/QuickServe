@@ -4,42 +4,43 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 import SignupView from './components/SignupView';
 import LoginView from './components/LoginView';
 import ContentView from './components/ContentView';
-import DetailsView from './components/DetailsView'; // Ensure the import is correct
-import Navbar from './components/Navbar';
-import MapComponent from './components/MapComponent';
+import Navbar from './components/Navbar'; // Import Navbar component
+import DetailsView from './components/DetailsView';
 import './App.css';
 
 const cities = {
   Maine: [
-    { name: "Portland", lat: 43.6615, lng: -70.2553 },
-    { name: "Lewiston", lat: 44.1004, lng: -70.2148 },
-    // Add more cities
+    "Portland", "Lewiston", "Bangor", "South Portland", "Auburn",
+    "Biddeford", "Sanford", "Brunswick", "Saco", "Westbrook"
   ],
   Massachusetts: [
-    { name: "Boston", lat: 42.3601, lng: -71.0589 },
-    { name: "Worcester", lat: 42.2626, lng: -71.8023 },
-    // Add more cities
+    "Boston", "Worcester", "Springfield", "Lowell", "Cambridge",
+    "New Bedford", "Brockton", "Quincy", "Lynn", "Fall River"
   ]
 };
 
 const App = () => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(() => {
+    // Initialize user from local storage if available
+    const storedUser = localStorage.getItem('user');
+    return storedUser ? JSON.parse(storedUser) : null;
+  });
 
   const handleLoginSuccess = (userData) => {
     setUser(userData);
+    localStorage.setItem('user', JSON.stringify(userData));
   };
 
   const handleLogout = () => {
     setUser(null);
-    localStorage.removeItem('login');
+    localStorage.removeItem('user');
   };
 
   return (
     <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}>
       <Router>
         <div className="App">
-          <Navbar user={user} handleLogout={handleLogout} />
-          <MapComponent cities={cities} />
+          <Navbar user={user} handleLogout={handleLogout} /> {/* Use Navbar component */}
           <div className="content">
             <Routes>
               <Route path="/register" element={<SignupView />} />
@@ -88,7 +89,7 @@ const App = () => {
                           <p>On Call Instant Service</p>
                         </div>
                         <div className="why-us-item">
-                          <img src="/images/Affordable.png" alt="Affordable" />
+                          <img src="/images/affordable.png" alt="Affordable" />
                           <p>Affordable</p>
                         </div>
                         <div className="why-us-item">
@@ -117,4 +118,3 @@ const App = () => {
 };
 
 export default App;
-

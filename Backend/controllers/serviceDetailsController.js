@@ -2,7 +2,6 @@ const ServiceDetailsDAO = require('../dao/ServiceDetailsDAO');
 
 exports.createServiceRequest = async (req, res) => {
   const { service, city, date, time, userId } = req.body;
-
   try {
     const serviceDetails = await ServiceDetailsDAO.createServiceRequest({
       service,
