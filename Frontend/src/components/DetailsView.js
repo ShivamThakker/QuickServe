@@ -1,11 +1,30 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import axios from 'axios';
 import './DetailsView.css';
 
 const DetailsView = () => {
   const [address, setAddress] = useState('');
   const [pricePerHour, setPricePerHour] = useState('');
+  const [serviceDetails, setServiceDetails] = useState({});
   const navigate = useNavigate();
+  const { id } = useParams(); // Retrieve ID from route parameters
+
+  useEffect(() => {
+    const fetchServiceDetails = async () => {
+      try {
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/service-details/${id}`);
+        const details = response.data;
+        setServiceDetails(details);
+        setAddress(details.address || '');
+        setPricePerHour(details.pricePerHour || '');
+      } catch (error) {
+        console.error('Failed to fetch service details:', error);
+      }
+    };
+
+    fetchServiceDetails();
+  }, [id]);
 
   const handleAddressChange = (event) => {
     setAddress(event.target.value);
@@ -15,8 +34,20 @@ const DetailsView = () => {
     setPricePerHour(event.target.value);
   };
 
-  const handleNextClick = () => {
-    navigate('/checkout');
+  const handleNextClick = async () => {
+    try {
+      // Send summary data to the backend
+      await axios.post(`${process.env.REACT_APP_API_URL}/api/summary`, {
+        serviceId: id, // Use the ID of the service details
+        address,
+        pricePerHour,
+      });
+
+      console.log('Summary saved successfully');
+      navigate(`/checkout/${id}`); // Navigate to the next page
+    } catch (error) {
+      console.error('Error saving summary:', error);
+    }
   };
 
   return (
@@ -26,19 +57,19 @@ const DetailsView = () => {
         <tbody>
           <tr>
             <td>Service</td>
-            <td>Static Service</td>
+            <td>{serviceDetails.service || 'Static Service'}</td>
           </tr>
           <tr>
             <td>City</td>
-            <td>Static City</td>
+            <td>{serviceDetails.city || 'Static City'}</td>
           </tr>
           <tr>
             <td>Date</td>
-            <td>Static Date</td>
+            <td>{serviceDetails.date || 'Static Date'}</td>
           </tr>
           <tr>
             <td>Time</td>
-            <td>Static Time</td>
+            <td>{serviceDetails.time || 'Static Time'}</td>
           </tr>
           <tr>
             <td>Address</td>

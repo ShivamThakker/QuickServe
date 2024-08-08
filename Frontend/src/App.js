@@ -46,8 +46,8 @@ const App = () => {
               <Route path="/register" element={<SignupView />} />
               <Route path="/login" element={<LoginView setUser={handleLoginSuccess} />} />
               <Route path="/content" element={<ContentView cities={cities} />} />
-              <Route path="/details" element={<DetailsView />} />
-              <Route path="/checkout" element={<CheckoutPage />} />
+              <Route path="/details/:id" element={<DetailsView />} />
+              <Route path="/checkout/:id" element={<CheckoutPage />} />
               <Route path="/" element={
                 user ? (
                   <Navigate to="/content" />

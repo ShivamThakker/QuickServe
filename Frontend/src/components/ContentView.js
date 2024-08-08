@@ -33,14 +33,25 @@ const ContentView = ({ cities }) => {
       return;
     }
     try {
-      await axios.post(`${process.env.REACT_APP_API_URL}/api/service-requests`, {
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/service-requests`, {
         service: selectedService,
         city: selectedCity,
         date: selectedDate,
         time: selectedTimeSlot,
-        userId: user.googleId, // Use actual user ID
+        userId: user.googleId,
       });
-      navigate('/details');
+
+      const { _id } = response.data;
+      
+      if (!_id) {
+        console.error('No ID returned from the API');
+        return;
+      }
+
+      console.log('Service request created with ID:', _id);
+
+      // Extract the ID from the response
+      navigate(`/details/${_id}`); // Pass the ID to the route
     } catch (error) {
       console.error('Error submitting service request:', error);
     }

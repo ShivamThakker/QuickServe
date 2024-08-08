@@ -14,6 +14,8 @@ class ServiceDAO {
     } catch (e) {
       console.error(`Unable to connect to ServiceRequest collection: ${e}`);
     }
+
+    
   }
 
   static async findServiceSeekerByGoogleId(googleId) {
