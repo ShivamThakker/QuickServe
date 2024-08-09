@@ -42,6 +42,14 @@ class UserDAO {
     }
   }
 
+  static async getAllUsers() {
+    try {
+      return await users.find({}).toArray();;
+    } catch (error) {
+      console.error("Error retrieving all users: ", error);
+      throw error; // Rethrow after logging to handle it further up the call stack
+    }
+  }
 
   static async getUsers() {
     // const db = await connectDB();

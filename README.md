@@ -112,6 +112,7 @@ In Iteration 2, we focused on improving the user experience by adding new featur
 -                  2. Backend codebase 
 -                  3. Api integration
 -                  4. Connection with Frontend 
+-                  5. Frontend & Backend Deployment to Google Cloud
 
 ### Challenges
 

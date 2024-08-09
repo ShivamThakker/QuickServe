@@ -14,9 +14,9 @@ function LoginView({ setUser }) {
     console.log('Login Success: Token data:', tokenData); // Debug: Log the decoded token data
 
     try {
-      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/login`, { token });
+      const response = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/login`, { token });
       setUser(response.data);
-      localStorage.setItem('login', JSON.stringify(response.data));
+      localStorage.setItem('user', JSON.stringify(response.data));
       console.log('Login Success: currentUser:', response.data);
       navigate('/content');
       // Redirect to homepage or any other page

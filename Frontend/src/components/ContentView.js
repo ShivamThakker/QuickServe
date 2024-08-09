@@ -24,6 +24,7 @@ const ContentView = ({ cities }) => {
     const storedUser = JSON.parse(localStorage.getItem('user'));
     if (storedUser) {
       setUser(storedUser);
+      console.log(storedUser)
     }
   }, []);
 
@@ -33,7 +34,7 @@ const ContentView = ({ cities }) => {
       return;
     }
     try {
-      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/service-requests`, {
+      const response = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/service-requests`, {
         service: selectedService,
         city: selectedCity,
         date: selectedDate,

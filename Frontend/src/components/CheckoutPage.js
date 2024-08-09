@@ -10,7 +10,7 @@ const CheckoutPage = () => {
   useEffect(() => {
     const fetchCheckoutDetails = async () => {
       try {
-        const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/checkout/${id}`);
+        const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/checkout/${id}`);
         setCheckoutDetails(response.data);
       } catch (error) {
         console.error('Error fetching checkout details:', error);

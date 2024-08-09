@@ -60,6 +60,18 @@ exports.createUser = async (req, res) => {
   }
 };
 
+exports.getAllUsers = async (req, res) => {
+  try {
+    const users = await UserDAO.getAllUsers();
+    if (!users || users.length === 0) {
+      return res.status(404).json({ message: "No users found" });
+  }
+    res.status(200).json(users);
+  } catch (error) {
+    res.status(500).json({ message: "Failed to retrieve users", error: error.message });
+  }
+}
+
 exports.getUserDetails = async (req, res) => {
   const { googleId } = req.params; // Assuming googleId is passed as a route parameter
 

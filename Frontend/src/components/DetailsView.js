@@ -13,7 +13,7 @@ const DetailsView = () => {
   useEffect(() => {
     const fetchServiceDetails = async () => {
       try {
-        const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/service-details/${id}`);
+        const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/service-details/${id}`);
         const details = response.data;
         setServiceDetails(details);
         setAddress(details.address || '');
@@ -37,7 +37,7 @@ const DetailsView = () => {
   const handleNextClick = async () => {
     try {
       // Send summary data to the backend
-      await axios.post(`${process.env.REACT_APP_API_URL}/api/summary`, {
+      await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/summary`, {
         serviceId: id, // Use the ID of the service details
         address,
         pricePerHour,
