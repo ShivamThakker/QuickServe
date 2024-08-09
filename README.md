@@ -98,3 +98,28 @@ In Iteration 2, we focused on improving the user experience by adding new featur
 
 
 
+### Contributions
+### Team Members
+
+- Adit Shah : 
+-                  1. Frontend Codebase
+-                  2. Frontend Styling 
+-                  3. Frontend Layout and ideation 
+-                  4. React map component added in the background with markation of maximum sale in the cities
+
+- Shivam Thakker :
+-                  1. Backend Database 
+-                  2. Backend codebase 
+-                  3. Api integration
+-                  4. Connection with Frontend 
+
+### Challenges
+
+- Deployment issues with google cloud in Backend, Not found error 
+- Few errors in frontend deployment
+
+### Future Work 
+
+- Update the CSS
+- Complete the preliminary testing
+- Fix few minor error such as few fields are not marked as required and so it allows to go to the next page even if the form is incomplete
