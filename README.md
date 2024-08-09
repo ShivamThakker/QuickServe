@@ -42,6 +42,8 @@ As this is the first phase of discussion, we are offering services like child ca
 - Node.js
 - MongoDB
 
+## Iteration 1
+
 ### Screenshots 
 <img width="1225" alt="Screenshot 2024-08-02 at 5 44 07 PM" src="https://media.github.khoury.northeastern.edu/user/17308/files/9f000e04-796c-4fbf-a722-e94262be5f69">
 <img width="1216" alt="Screenshot 2024-08-02 at 5 44 14 PM" src="https://media.github.khoury.northeastern.edu/user/17308/files/cb65ebd0-55d1-4359-a7f9-5d2fbcb46c37">
@@ -71,3 +73,15 @@ As this is the first phase of discussion, we are offering services like child ca
 
 - Adding functionalities for react components 
 - Adding details view at the end of checkout.
+
+
+## Iteration 2
+
+In Iteration 2, we focused on improving the user experience by adding new features and enhancing existing ones. This iteration includes:
+
+- **ContentView Page**: A new page where users can browse and select the services they want to book. After selecting a service, users are redirected to the DetailsView page.
+- **DetailsView Page**: Here, users can input their address and the expected amount they wish to pay for the service. Once entered, users are redirected to the summary and checkout page.
+- **Summary/Checkout Page**: This page provides a summary of the selected services, allowing users to review their choices and proceed with payment.
+- Improved navigation and routing to enhance the flow between different pages.
+
+### Screenshots Iteration 2
