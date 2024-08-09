@@ -86,9 +86,9 @@ In Iteration 2, we focused on improving the user experience by adding new featur
 
 ### Screenshots
 
-![image](https://media.github.khoury.northeastern.edu/user/17467/files/a3851e3c-4c3b-43ee-a26b-8e678954a75c)
-![image](https://media.github.khoury.northeastern.edu/user/17467/files/8590ba67-d207-4aa7-9b11-821d4eb07c1e)
-![image](https://media.github.khoury.northeastern.edu/user/17467/files/535c6f95-b5ee-4264-81a3-7fb93378ed70)
+![image](https://media.github.khoury.northeastern.edu/user/17467/files/3e04e8f4-7ae9-4f42-bd20-741c1a737647)
+![image](https://media.github.khoury.northeastern.edu/user/17467/files/18846e9b-4311-42e5-a3e8-2172ac5eef72)
+![image](https://media.github.khoury.northeastern.edu/user/17467/files/c835bea5-f3a6-4b7f-9dd7-a092c9d91fec)
 
 
 ### Backend MongoDB Scrrenshots
