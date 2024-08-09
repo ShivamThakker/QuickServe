@@ -84,4 +84,16 @@ In Iteration 2, we focused on improving the user experience by adding new featur
 - **Summary/Checkout Page**: This page provides a summary of the selected services, allowing users to review their choices and proceed with payment.
 - Improved navigation and routing to enhance the flow between different pages.
 
-### Screenshots Iteration 2
+### Screenshots
+
+![image](https://media.github.khoury.northeastern.edu/user/17467/files/a3851e3c-4c3b-43ee-a26b-8e678954a75c)
+![image](https://media.github.khoury.northeastern.edu/user/17467/files/272857a0-44e2-4bbd-a459-30cc1344e1ab)
+![image](https://media.github.khoury.northeastern.edu/user/17467/files/b7b0c441-4c25-420c-bae2-fb33d369a740)
+
+### Backend MongoDB Scrrenshots
+
+![image](https://media.github.khoury.northeastern.edu/user/17467/files/816a02d0-3c0a-4e79-9182-e3bf21115719)
+![image](https://media.github.khoury.northeastern.edu/user/17467/files/78252ee1-c96a-4974-9e35-719c272d6b3f)
+
+
+
