@@ -40,7 +40,6 @@ exports.upload = upload;
 exports.createUser = async (req, res) => {
   const { name, phoneNumber, email, service, hourlyRate } = req.body;
   const photo = req.file ? req.file.filename : null;
-
   try {
     const newUser = await UserDAO.createUser({
       name,

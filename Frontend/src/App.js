@@ -90,7 +90,7 @@ const App = () => {
                           <p>On Call Instant Service</p>
                         </div>
                         <div className="why-us-item">
-                          <img src="/images/affordable.png" alt="Affordable" />
+                          <img src="/images/Affordable.png" alt="Affordable" />
                           <p>Affordable</p>
                         </div>
                         <div className="why-us-item">
