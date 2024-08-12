@@ -24,7 +24,6 @@ const ContentView = ({ cities }) => {
     const storedUser = JSON.parse(localStorage.getItem('user'));
     if (storedUser) {
       setUser(storedUser);
-      console.log(storedUser)
     }
   }, []);
 
@@ -49,9 +48,6 @@ const ContentView = ({ cities }) => {
         return;
       }
 
-      console.log('Service request created with ID:', _id);
-
-      // Extract the ID from the response
       navigate(`/details/${_id}`); // Pass the ID to the route
     } catch (error) {
       console.error('Error submitting service request:', error);
