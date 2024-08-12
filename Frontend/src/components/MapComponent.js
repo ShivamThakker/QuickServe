@@ -1,4 +1,3 @@
-// components/MapComponent.js
 import React from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
@@ -16,7 +15,12 @@ const customIcon = new L.Icon({
 
 const MapComponent = ({ cities }) => {
   return (
-    <MapContainer center={[44.0, -71.0]} zoom={6} className="map-container">
+    <MapContainer 
+      center={[44.0, -71.0]} 
+      zoom={6} 
+      className="map-container"
+      style={{ padding: 0, margin: 0, border: 'none' }}
+    >
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -24,7 +28,7 @@ const MapComponent = ({ cities }) => {
       {Object.keys(cities).map(state => (
         cities[state].map(city => (
           <Marker
-            key={city}
+            key={city.name}
             position={[city.lat, city.lng]} // Ensure cities have lat and lng properties
             icon={customIcon}
           >
