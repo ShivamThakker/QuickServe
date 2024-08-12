@@ -4,9 +4,33 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: -1; /* Send the map to the background */
+  z-index: -1; /* Keep the map in the background */
+  background-color: transparent !important; /* Ensure the map container background is transparent */
 }
 
 .leaflet-container {
-  background: none;
+  background: none !important; /* Force the Leaflet container background to be transparent */
+  border: none !important; /* Remove any potential border that could be adding a background */
+  height: 100% !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+/* Example for targeting the problematic element */
+.problematic-element-class {
+  display: none; /* Hides the element completely */
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* Or, if the element needs to stay but shouldn't interfere */
+.problematic-element-class {
+  z-index: -2; /* Sends it behind the map */
+  background: transparent !important;
+  background-color: transparent !important;
+}
+html, body, .map-container, .leaflet-container, .problematic-element-class {
+  background: transparent !important;
+  background-color: transparent !important;
+  z-index: auto !important;
 }
