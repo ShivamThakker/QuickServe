@@ -1,4 +1,3 @@
-// src/components/Navbar.js
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.css'; // Add this if you have custom styling
@@ -29,6 +28,7 @@ const Navbar = ({ user, handleLogout }) => {
       </div>
       <div className="navbar-links">
         <button onClick={handleRequestServiceClick} className="navbar-link">Request a Service</button>
+        <Link to="/reviews-location" className="navbar-link">Reviews/Location</Link>
         {user ? (
           <>
             <span className="navbar-link">Welcome, {user.name}</span>
