@@ -124,3 +124,40 @@ In Iteration 2, we focused on improving the user experience by adding new featur
 - Update the CSS
 - Complete the preliminary testing
 - Fix few minor error such as few fields are not marked as required and so it allows to go to the next page even if the form is incomplete
+
+
+## Iteration 3 / Final Phase Launch
+In Iteration 3 we fcused on using the react leaflet library or functionality for displaying the locations and reviews for the places where we provide services along with updation in the following:
+
+### Checkout page
+Added the functionality of confirm and pay and a dialog box appearance for the confirmation.
+
+### Improved the overall CSS for the whole website and few bug fixes 
+
+![Screenshot 2024-08-14 at 6 53 51 PM](https://media.github.khoury.northeastern.edu/user/17308/files/a990473b-e59e-4dcd-bd2c-098e2321b049)
+![Screenshot 2024-08-14 at 6 54 17 PM](https://media.github.khoury.northeastern.edu/user/17308/files/77111919-af14-4c22-85cf-12904725ef19)
+![Screenshot 2024-08-14 at 6 54 28 PM](https://media.github.khoury.northeastern.edu/user/17308/files/9b111888-ddd5-44e7-8f6c-ad189c39e394)
+
+### Contributions
+### Team Members
+
+- Adit Shah : 
+-                  1. Frontend Codebase
+-                  2. Frontend Styling 
+-                  3. Frontend Layout and ideation 
+-                  4. React map component added in the background with markation of location at cities we provide services for.
+
+- Shivam Thakker :
+-                  1. Backend Database 
+-                  2. Backend codebase 
+-                  3. Api integration
+-                  4. Connection with Frontend 
+-                  5. Frontend & Backend Deployment to Google Cloud
+
+### Challenges 
+
+We faced challenges for mapping the cities along with their langitude and longitude coordinates but it was fixed 
+
+### Future Work
+
+Implementation of the payment system and more upgrades for the user registering to provide the services.
