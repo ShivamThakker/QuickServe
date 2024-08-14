@@ -146,7 +146,7 @@ Added the functionality of confirm and pay and a dialog box appearance for the c
 -                  2. Frontend Styling 
 -                  3. Frontend Layout and ideation 
 -                  4. React map component added in the background with markation of location at cities we provide services for.
-
+-                  5. Styling change and addition of more functionalities to checkout page for confimation.           
 - Shivam Thakker :
 -                  1. Backend Database 
 -                  2. Backend codebase 
