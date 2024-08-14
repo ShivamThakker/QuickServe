@@ -83,7 +83,7 @@ const DetailsView = () => {
             </td>
           </tr>
           <tr>
-            <td>Price per Hour</td>
+            <td>Amount willing to pay (per Hour)</td>
             <td>
               <input 
                 type="number" 

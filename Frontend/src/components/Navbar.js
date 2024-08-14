@@ -23,7 +23,7 @@ const Navbar = ({ user, handleLogout }) => {
       <div className="logo">
         <Link to="/">
           <img src="/images/Quickserve.jpeg" alt="Quickserve Logo" />
-          <span className="company-name">Quickserve</span>
+          <span className="company-name">Quickserve.ai</span>
         </Link>
       </div>
       <div className="navbar-links">
