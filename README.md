@@ -45,10 +45,10 @@ As this is the first phase of discussion, we are offering services like child ca
 ## Iteration 1
 
 ### Screenshots 
-<img width="1225" alt="Screenshot 2024-08-02 at 5 44 07 PM" src="https://media.github.khoury.northeastern.edu/user/17308/files/9f000e04-796c-4fbf-a722-e94262be5f69">
-<img width="1216" alt="Screenshot 2024-08-02 at 5 44 14 PM" src="https://media.github.khoury.northeastern.edu/user/17308/files/cb65ebd0-55d1-4359-a7f9-5d2fbcb46c37">
-<img width="1225" alt="Screenshot 2024-08-02 at 5 44 23 PM" src="https://media.github.khoury.northeastern.edu/user/17308/files/7127b8c1-e7c5-4fa6-9445-6dbce26c8662">
-<img width="1212" alt="Screenshot 2024-08-02 at 5 44 33 PM" src="https://media.github.khoury.northeastern.edu/user/17308/files/b22fe654-1fea-4df3-86ca-36666368bf03">
+<img width="1225" alt="Screenshot 2024-08-02 at 5 44 07 PM" src="Images/Index_page.png">
+<img width="1216" alt="Screenshot 2024-08-02 at 5 44 14 PM" src="Images/Index_page_2.png">
+<img width="1225" alt="Screenshot 2024-08-02 at 5 44 23 PM" src="Images/user_registration.png">
+<img width="1212" alt="Screenshot 2024-08-02 at 5 44 33 PM" src="Images/service_request.png">
 
 ### Contributions
 ### Team Members
@@ -86,15 +86,13 @@ In Iteration 2, we focused on improving the user experience by adding new featur
 
 ### Screenshots
 
-![image](https://media.github.khoury.northeastern.edu/user/17467/files/3e04e8f4-7ae9-4f42-bd20-741c1a737647)
-![image](https://media.github.khoury.northeastern.edu/user/17467/files/18846e9b-4311-42e5-a3e8-2172ac5eef72)
-![image](https://media.github.khoury.northeastern.edu/user/17467/files/c835bea5-f3a6-4b7f-9dd7-a092c9d91fec)
-
+<img width="1225" alt="Screenshot 2024-08-02 at 5 44 07 PM" src="Images/service_request_2.png">
+<img width="1225" alt="Screenshot 2024-08-02 at 5 44 07 PM" src="Images/details.png">
+<img width="1225" alt="Screenshot 2024-08-02 at 5 44 07 PM" src="Images/checkout.png">
 
 ### Backend MongoDB Scrrenshots
 
-![image](https://media.github.khoury.northeastern.edu/user/17467/files/816a02d0-3c0a-4e79-9182-e3bf21115719)
-![image](https://media.github.khoury.northeastern.edu/user/17467/files/78252ee1-c96a-4974-9e35-719c272d6b3f)
+<img width="1225" alt="Screenshot 2024-08-02 at 5 44 07 PM" src="Images/database.png">
 
 
 
@@ -134,9 +132,9 @@ Added the functionality of confirm and pay and a dialog box appearance for the c
 
 ### Improved the overall CSS for the whole website and few bug fixes 
 
-![Screenshot 2024-08-14 at 6 53 51 PM](https://media.github.khoury.northeastern.edu/user/17308/files/a990473b-e59e-4dcd-bd2c-098e2321b049)
-![Screenshot 2024-08-14 at 6 54 17 PM](https://media.github.khoury.northeastern.edu/user/17308/files/77111919-af14-4c22-85cf-12904725ef19)
-![Screenshot 2024-08-14 at 6 54 28 PM](https://media.github.khoury.northeastern.edu/user/17308/files/9b111888-ddd5-44e7-8f6c-ad189c39e394)
+<img width="1225" alt="Screenshot 2024-08-02 at 5 44 07 PM" src="Images/maps.png">
+<img width="1225" alt="Screenshot 2024-08-02 at 5 44 07 PM" src="Images/details.png">
+<img width="1225" alt="Screenshot 2024-08-02 at 5 44 07 PM" src="Images/checkout_2.png">
 
 ### Contributions
 ### Team Members
