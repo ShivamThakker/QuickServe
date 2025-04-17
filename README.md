@@ -87,7 +87,7 @@ In Iteration 2, we focused on improving the user experience by adding new featur
 ### Screenshots
 
 <img width="1225" alt="Screenshot 2024-08-02 at 5 44 07 PM" src="Images/service_request_2.png">
-<img width="1225" alt="Screenshot 2024-08-02 at 5 44 07 PM" src="Images/details.png">
+<img width="1225" alt="Screenshot 2024-08-02 at 5 44 07 PM" src="Images/details_2.png">
 <img width="1225" alt="Screenshot 2024-08-02 at 5 44 07 PM" src="Images/checkout.png">
 
 ### Backend MongoDB Scrrenshots
